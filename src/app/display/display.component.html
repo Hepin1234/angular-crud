@@ -1,0 +1,29 @@
+<table class="table1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Gender</th>
+        <th>Password</th>
+        <th>Hobbies</th>
+        <th>Phone Number</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userData">
+        <td>{{ user.Id }}</td>
+        <td>{{ user.Name }}</td>
+        <td>{{ user.PhoneNumber }}</td>
+        <td>{{ user.Gender }}</td>
+        <td>{{ user.Password }}</td>
+        <td>{{ user.Hobbies }}</td>
+        <td>{{ user.CityName }}</td>
+
+
+      </tr>
+    </tbody>
+  </table>
+  

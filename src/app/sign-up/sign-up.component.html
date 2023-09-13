@@ -1,0 +1,322 @@
+<div class="login-container">
+    <!-- <img class="film" src="assets/images/film.png" alt="" /> -->
+    <!-- <div class="logo">Antim Multimovie Collection
+    </div> -->
+    <!-- <p>{{getJsonValue | json}}</p> -->
+
+    <!-- <form [formGroup]="signupForm" class="login-form" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" class="form-control inputTxt" formControlName="username">
+        <div style="color: red;" *ngIf="signupForm.get('username')?.hasError('required') && signupForm.get('username')?.touched">
+          Username is required.
+        </div>
+      </div>
+      
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" class="form-control inputTxt" formControlName="password">
+        <div style="color: red;" *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.touched">
+          Password is required.
+        </div>
+      </div>
+      
+      <div>
+        <label for="gender">Gender:</label>
+        <div>
+          <label for="">
+            <input type="radio" value="0" formControlName="gender">Male
+          </label>
+          <!-- &nbsp; --><br>
+          <!-- <label for="">
+            <input type="radio" value="1" formControlName="gender">Female
+          </label>
+        </div>
+        <div style="color: red;" *ngIf="signupForm.get('gender')?.hasError('required') && signupForm.get('gender')?.touched">
+        
+          Gender is required.
+        </div>
+      </div>
+
+      <div>
+        <label for="image">Image:</label>
+        <input type="file"  class="form-control inputTxt" formControlName="image">
+        <div style="color: red;" *ngIf="signupForm.get('image')?.hasError('required') && signupForm.get('image')?.touched">
+          Image is required.
+        </div>
+      </div>
+
+      <div>
+        <label for="gender">Phone Number:</label>
+        <input type="number"  class="form-control inputTxt" formControlName="phoneNumber">
+        <div style="color: red;" *ngIf="signupForm.get('phoneNumber')?.hasError('required') && signupForm.get('phoneNumber')?.touched">
+          Gender is required.
+        </div>
+      </div>
+
+      <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" class="form-control inputTxt" formControlName="city">
+        <div  style="color: red;"  *ngIf="signupForm.get('city')?.hasError('required') && signupForm.get('city')?.touched">
+        City is required.
+        </div>
+      </div>
+      
+      <div>
+        <label for="hobbies">Hobbies:</label>
+        <textarea id="hobbies" class="form-control inputTxt" formControlName="hobbies"></textarea>
+      </div>
+      <br>
+
+      <button class="btn btn-dark" type="submit" [disabled]="signupForm.invalid" (click)="signup()">Sign Up</button> &nbsp; -->
+
+
+
+      
+    <!-- </form>  -->
+    
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">New Friend</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="modalForm">
+          <div class="form-group">
+            <label for="firstname">Username</label>
+            <div class="input-group">
+              <input id="firstname" class="form-control" formControlName="username">
+              <div *ngIf="modalForm.get('password')?.hasError('required') && modalForm.get('password')?.touched">name is required </div>
+            </div>
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" class="form-control inputTxt" formControlName="password">
+            <div style="color: red;" *ngIf="modalForm.get('password')?.hasError('required') && modalForm.get('password')?.touched">
+              Password is required.
+            </div>
+          </div>
+          
+          <div>
+            <label for="gender">Gender:</label>
+            <div>
+              <label for="">
+                <input type="radio" value="0" formControlName="gender">Male
+              </label>
+              <!-- &nbsp; --><br>
+              <label for="">
+                <input type="radio" value="1" formControlName="gender">Female
+              </label>
+            </div>
+            <div style="color: red;" *ngIf="modalForm.get('gender')?.hasError('required') && modalForm.get('gender')?.touched">
+            
+              Gender is required.
+            </div>
+          </div>
+    
+          <div>
+            <label for="image">Image:</label>
+            <input type="file"  class="form-control inputTxt" formControlName="image">
+            <div style="color: red;" *ngIf="modalForm.get('image')?.hasError('required') && modalForm.get('image')?.touched">
+              Image is required.
+            </div>
+          </div>
+    
+          <div>
+            <label for="gender">Phone Number:</label>
+            <input type="number"  class="form-control inputTxt" formControlName="phoneNumber">
+            <div style="color: red;" *ngIf="modalForm.get('phoneNumber')?.hasError('required') && modalForm.get('phoneNumber')?.touched">
+              Gender is required.
+            </div>
+          </div>
+    
+          <div>
+            <label for="city">City:</label>
+            <input type="text" id="city" class="form-control inputTxt" formControlName="city">
+            <div  style="color: red;"  *ngIf="modalForm.get('city')?.hasError('required') && modalForm.get('city')?.touched">
+            City is required.
+            </div>
+          </div>
+          
+          <div>
+            <label for="hobbies">Hobbies:</label>
+            <textarea id="hobbies" class="form-control inputTxt" formControlName="hobbies"></textarea>
+          </div>
+          <br>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+      </div>
+    </ng-template>
+    
+    <ng-template #editContent let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Edit User</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editForm">
+          <div class="form-group">
+            <label for="firstname">Username</label>
+            <div class="input-group">
+              <input id="username" class="form-control" formControlName="username" >
+              <div style="color: red;" *ngIf="modalForm.get('username')?.hasError('required') && modalForm.get('username')?.touched">Name is required</div>
+            </div>
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" class="form-control inputTxt" formControlName="password">
+            <div style="color: red;" *ngIf="modalForm.get('password')?.hasError('required') && modalForm.get('password')?.touched">
+              Password is required.
+            </div>
+          </div>
+          
+          <div>
+            <label for="gender">Gender:</label>
+            <div>
+              <label for="">
+                <input type="radio" value="0" formControlName="gender">Male
+              </label>
+              <!-- &nbsp; --><br>
+              <label for="">
+                <input type="radio" value="1" formControlName="gender">Female
+              </label>
+            </div>
+            <div style="color: red;" *ngIf="modalForm.get('gender')?.hasError('required') && modalForm.get('gender')?.touched">
+            
+              Gender is required.
+            </div>
+          </div>
+    
+          <!-- <div>
+            <label for="image">Image:</label>
+            <input type="file"  class="form-control inputTxt" formControlName="image">
+            <div style="color: red;" *ngIf="modalForm.get('image')?.hasError('required') && modalForm.get('image')?.touched">
+              Image is required.
+            </div>
+          </div>
+     -->
+          <div>
+            <label for="gender">Phone Number:</label>
+            <input type="number"  class="form-control inputTxt" formControlName="phoneNumber">
+            <div style="color: red;" *ngIf="modalForm.get('phoneNumber')?.hasError('required') && modalForm.get('phoneNumber')?.touched">
+              Gender is required.
+            </div>
+          </div>
+    
+          <div>
+            <label for="city">City:</label>
+            <input type="text" id="city" class="form-control inputTxt" formControlName="city">
+            <div  style="color: red;"  *ngIf="modalForm.get('city')?.hasError('required') && modalForm.get('city')?.touched">
+            City is required.
+            </div>
+          </div>
+          
+          <div>
+            <label for="hobbies">Hobbies:</label>
+            <textarea id="hobbies" class="form-control inputTxt" formControlName="hobbies"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="onSubmitEdit()">Save</button>
+      </div>
+    </ng-template>
+
+
+    <div class="container">
+      <button class="btn btn-dark" style="margin-bottom: 10px;" type="submit" (click)="open(content)">Add User</button>
+      <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Password</th>
+          <th>Hobbies</th>
+          <th>PhoneNumber</th>
+          <th>CityName</th>
+          <th>Edit </th>
+          <th>Delete </th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <ng-container >
+            <tr *ngFor="let friend of friends">
+              <td>{{friend.Id}}</td>
+              <td>{{friend.Name}}</td>
+              <td>{{friend.Gender}}</td>
+              <td>{{friend.Password}}</td>
+              <td>{{friend.Hobbies}}</td>
+              <td>{{friend.PhoneNumber}}</td>
+              <td>{{friend.City}}</td>
+              <td><button style="background: blue;border-radius: 5px;" (click)="openEditModal(editContent, friend)">Edit</button></td>
+              <td><button style="background: red;border-radius: 5px;" (click)="deleteFriend(friend.Id)">Delete</button></td>
+
+
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- <div class="login-form">
+      <div class="form-group">
+        <label for="uname">Username</label>
+        <input
+          type="text"
+          name="uname"
+          class="form-control inputTxt"
+          [(ngModel)]="username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="uname">Phone Number</label>
+        <input
+          type="string"
+          name="phone"
+          class="form-control inputTxt"
+          [(ngModel)]="phone"
+        />
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input
+          type="text"
+          name="uname"
+          class="form-control inputTxt"
+          [(ngModel)]="city"
+        />
+      </div>
+      <div class="form-group">
+        <label for="hobbies">Hobbbies</label>
+        <input
+          type="text"
+          name="uname"
+          class="form-control inputTxt"
+          [(ngModel)]="hobbies"
+        />
+      </div>
+      <div class="form-group">
+        <label for="pword">Password</label>
+        <input
+          type="password"
+          name="pword"
+          class="form-control inputTxt"
+          [(ngModel)]="password"
+        />
+      </div>
+      <div class="btn-container">
+        <div class="error">{{ errorMsg }}</div>
+        <button class="btn btn-dark" (click)="login()">Login</button>
+      </div>
+    </div> -->
+  </div>
