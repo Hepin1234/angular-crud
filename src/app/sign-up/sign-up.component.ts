@@ -186,7 +186,7 @@ addUser() {
         console.log('User created in API successfully:', response);
 
         // Close the modal
-        this.modalService.dismissAll();
+        // this.modalService.dismissAll();
         this.modalForm.reset(); // Clear the form
 
         // After adding the user, you should refresh the data in your table
@@ -197,7 +197,7 @@ addUser() {
             console.log(newUser);
             
             this.friends = data.Select;
-          },
+          }, 
           (error: any) => {
             console.error('Error fetching updated data from API:', error);
             // Handle the error appropriately
